@@ -1,0 +1,1 @@
+The idea of this repository is to train for an IT technical interview by practicing different kinds of logic excercise based in Node.js provided by HackerRank.
