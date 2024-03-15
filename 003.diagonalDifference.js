@@ -13,7 +13,7 @@ Complete the diagonalDifference function in the editor below.
 
 diagonalDifference takes the following parameter:
 
--int arr[n][m]: an array of integers
+- int arr[n][m]: an array of integers
 
 Return
 - int: the absolute diagonal difference
@@ -62,7 +62,23 @@ Note: |x| is the absolute value of x
  * The function accepts 2D_INTEGER_ARRAY arr as parameter.
  */
 
-function diagonalDifference(arr) {
-    // Write your code here
+/*arr = [3,[11,2,4],[4,5,6],[10,8,-12]]
+      i= 0, 1      , 2     , 3
+      j=    0 ,1,2   0,1,2   0 ,1,  2
 
+*/
+
+
+function diagonalDifference(arr) {
+  // Write your code here
+  let diagonalLeftToRight = 0;
+  let diagonalRightToLeft = 0;
+  for (let i = 0; i < arr.length; i++){
+        diagonalLeftToRight = diagonalLeftToRight + arr[i][i]
+  }
+  for (let i = 0; i < arr.length; i++){
+        diagonalRightToLeft = diagonalRightToLeft + arr[i][arr.length - 1 - i]
+  }
+  return Math.abs(diagonalLeftToRight - diagonalRightToLeft)
 }
+console.log(diagonalDifference([[11,2,4],[4,5,6],[10,8,-12]]))
