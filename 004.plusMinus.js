@@ -59,5 +59,20 @@ The proportions of occurrence are positive: 3/6=0.500000, negative: 2/6=0.333333
 
 function plusMinus(arr) {
     // Write your code here
-
+  let positive=0;
+  let negative=0;
+  let zero=0;
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] > 0) positive++;
+    else if (arr[i] < 0) negative++;
+    else zero++
+  }
+  let numPlus=positive / arr.length;
+  let numNegative=negative / arr.length;
+  let numZero = zero / arr.length;
+  console.log(numPlus.toFixed(6));
+  console.log(numNegative.toFixed(6));
+  console.log(numZero.toFixed(6));
+  
 }
+plusMinus([-4, 3, -9, 0, 4, 1])
