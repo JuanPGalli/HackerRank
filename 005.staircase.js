@@ -60,5 +60,9 @@ The staircase is right-aligned, composed of # symbols and spaces, and has a heig
 
 function staircase(n) {
     // Write your code here
-
+  for (let i = 1; i <= n; i++){
+    if (n !== i) console.log(" ".repeat(n - i) + "#".repeat(i))
+    else (console.log("#".repeat(n)))
+  }
 }
+staircase(6);
