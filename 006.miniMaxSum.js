@@ -47,3 +47,22 @@ Sum everything except 5, the sum is 1+2+3+4=10.
 Hints: Beware of integer overflow! Use 64-bit Integer.
 
 Need help to get started? Try the Solve Me First problem*/
+
+/*
+ * Complete the 'miniMaxSum' function below.
+ *
+ * The function accepts INTEGER_ARRAY arr as parameter.
+ */
+
+function miniMaxSum(arr) {
+    // Write your code here
+  let min = 0;
+  let max = 0;
+  arr.sort((a, b) => a - b)
+  for (let i = 0; i < arr.length; i++){
+    if (i < arr.length - 1) min = min + arr[i];
+    if (i > 0) max = max + arr[i];
+  }
+  console.log(min, max);
+}
+miniMaxSum([7,69,2,221,8974])
