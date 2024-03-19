@@ -42,5 +42,12 @@ Candle heights are [3,2,1,3]. The tallest candles are 3 units, and there are 2 o
 
 function birthdayCakeCandles(candles) {
     // Write your code here
-  
+  //candles.sort((a, b) => a - b) // Reordenar el array genera un complejidad O(n log n)
+  let maxHeight = Math.max(...candles); //Tomando el mayor y comparando obtenemos una complejidad O(n). Serían dos iteraciones.
+  let tallest = 0;
+  for (let i = 0; i < candles.length; i++){
+    if(candles[i]===maxHeight) tallest++
+  }
+  return tallest;
 }
+console.log(birthdayCakeCandles([3, 2, 1, 3]));
