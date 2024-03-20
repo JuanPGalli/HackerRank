@@ -41,5 +41,20 @@ Sample Output 0
 
 function timeConversion(s) {
     // Write your code here
-
+    let newHour='';
+    let arr=[];
+  if (s.includes("PM")) {
+    for(let i=0;i<s.length-2;i++){
+      arr.push(s[i])
+    }
+    arr[0]=Number(arr[0])+1
+    arr[1]=Number(arr[1])+2
+    for(let i=0;i<arr.length;i++){
+      newHour=newHour+arr[i]
+    }
+    return newHour
+  } else if (s.includes("AM")) {
+    
+  }
 }
+timeConversion("07:05:45PM")
