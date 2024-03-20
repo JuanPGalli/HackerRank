@@ -41,9 +41,16 @@ Sample Output 0
 
 function timeConversion(s) {
     // Write your code here
-    let newHour='';
+    // Versión correcta, complejidad O(n), pero poco legible y con variables temporales.
+    /*let newHour='';
     let arr=[];
   if (s.includes("PM")) {
+    if (s[0] === '1' && s[1] === '2') {
+      for (let i = 0; i < s.length-2; i++){
+        newHour = newHour + s[i]
+      }
+      return newHour
+    }
     for(let i=0;i<s.length-2;i++){
       arr.push(s[i])
     }
@@ -54,7 +61,37 @@ function timeConversion(s) {
     }
     return newHour
   } else if (s.includes("AM")) {
-    
-  }
+    if (s[0] === '1' && s[1]==='2') {
+      newHour = "00"
+      for (let i = 2; i < s.length - 2; i++){
+      newHour=newHour+s[i]
+      }
+      return newHour
+    }
+    for (let i = 0; i < s.length - 2; i++){
+      newHour=newHour+s[i]
+    }
+    return newHour
+  }*/
+
+  // Version GPT complejidad O(n), utilizo un nuevo método startsWith(), y con el slice me evito crear un nuevo string y es mucho más legible.
+  let newHour = '';
+    if (s.includes("PM")) {
+        if (s.startsWith('12')) {
+            newHour = s.slice(0, -2);
+        } else {
+            newHour = (parseInt(s.slice(0, 2)) + 12) + s.slice(2, -2);
+        }
+    } else if (s.includes("AM")) {
+        if (s.startsWith('12')) {
+            newHour = '00' + s.slice(2, -2);
+        } else {
+            newHour = s.slice(0, -2);
+        }
+    }
+    return newHour;
 }
-timeConversion("07:05:45PM")
+console.log(timeConversion("07:05:45PM"));
+console.log(timeConversion("12:05:45PM"));
+console.log(timeConversion("12:01:20AM"));
+console.log(timeConversion("07:45:05AM"));
