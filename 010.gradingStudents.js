@@ -9,7 +9,7 @@ If the difference between the grade and the next multiple of 5 is less than 3, r
 If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade.
 
 Examples
-- grade = 84 round to  (85 - 84 is less than 3)
+- grade = 84 round to 85 (85 - 84 is less than 3)
 - grade = 29 do not round (result is less than 40)
 - grade = 57 do not round (60 - 57 is 3 or higher)
 Given the initial value of grade for each of Sam's n students, write code to automate the rounding process.
@@ -66,3 +66,21 @@ image:
 3. Student 3 received a 38, and the next multiple of 5 from 38 is 40. Since 40-38<3, the student's grade will be rounded to 40.
 4. Student 4 received a grade below 33, so the grade will not be modified and the student's final grade is 33.
 */
+
+/*
+ * Complete the 'gradingStudents' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts INTEGER_ARRAY grades as parameter.
+ */
+
+function gradingStudents(grades) {
+  // Write your code here
+  for (let i = 0; i < grades.length; i++){
+    if (grades[i] > 37 && grades[i]%5 >= 3) {
+      grades[i] = Math.ceil(grades[i]/5)*5
+    }
+  }
+  return grades
+}
+console.log(gradingStudents([73, 67, 38, 33]));
