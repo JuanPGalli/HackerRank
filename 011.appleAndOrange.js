@@ -9,10 +9,10 @@ In the diagram below:
 
 Apple and orange(2).png
 
-                apple                    apple  orange
-                tree       apple    --------------  (red line)
--------------------------------------------------------                
-                  A-------->        <------------->
+                apple                    apple  orange                Orange
+                tree       apple    --------------  (red line)         tree
+--------------------------------------------------------------------------------
+                  A-------->        <------------->                      B
                         d           s             t
 
 
@@ -84,6 +84,18 @@ Only the second orange falls within the region between 7 and 11, so we print 1 a
  */
 
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
-    // Write your code here
-
+  // Write your code here
+  let countApples = 0;
+  let countOranges = 0;
+  for (let i = 0; i < apples.length; i++){
+    apples[i] = a + apples[i];
+    if(apples[i]>=s && apples[i]<=t) countApples++
+  }
+  for (let i = 0; i < oranges.length; i++){
+    oranges[i] = b + oranges[i];
+    if(oranges[i]>=s && oranges[i]<=t) countOranges++
+  }
+  console.log(countApples);
+  console.log(countOranges);
 }
+countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6])
