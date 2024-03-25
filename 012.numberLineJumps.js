@@ -73,6 +73,20 @@ The second kangaroo has a starting location that is ahead(further to the right) 
  */
 
 function kangaroo(x1, v1, x2, v2) {
-    // Write your code here
-  
+  // Write your code here
+  if ((x1 > x2 && v1 > v2) || (x1 < x2 && v1 < v2)) return "NO";
+  for (let i = 0; i <= 10000; i++){
+    x1 = x1 + v1;
+    x2 = x2 + v2;
+    if (x1 === x2) return "YES";
+  }
+  return "NO";
+
+  /*gpt: if ((x1 - x2) * (v1 - v2) < 0 && (x1 - x2) % (v1 - v2) === 0) {
+        return "YES";
+    } else {
+        return "NO";
+    }*/
 }
+console.log(kangaroo(0, 2, 5, 3));
+console.log(kangaroo(0, 3, 4, 2));
