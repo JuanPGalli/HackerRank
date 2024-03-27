@@ -58,5 +58,31 @@ Explanation
 
 function getTotalX(a, b) {
     // Write your code here
-
+  let countFactor = 0;
+  let isFactor = false
+  for (let i = a[a.length - 1]; i <= b[0]; i++){
+    for (let j = 0; j < a.length; j++){
+      if (i % a[j] !== 0) {
+        isFactor = false;
+        break; // Salir del bucle si un número no es un factor
+      } 
+      else {
+        isFactor = true;
+      };
+    };
+    if (isFactor) {
+      for (let k = 0; k < b.length; k++){
+        if (b[k] % i !== 0) {
+          isFactor = false;
+          break; // Salir del bucle si un número no es un factor
+        }
+      }
+    }
+    if (isFactor) {
+      countFactor = countFactor + 1
+    }
+    isFactor = false;
+  }
+  return countFactor;
 }
+console.log(getTotalX([2, 4], [16, 32, 96]));
