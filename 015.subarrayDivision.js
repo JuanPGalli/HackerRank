@@ -89,5 +89,16 @@ Lily only wants to give Ron m=1 square of chocolate with an integer value of d=4
 
 function birthday(s, d, m) {
     // Write your code here
-
+  let count = 0;
+  for (let i = 0; i < s.length; i++){
+    let sumArray = s.slice(i, m+i)
+    let sum = 0;
+    sumArray.forEach(element => {
+      sum = sum + element
+    });
+    if(sum===d) count++
+  }
+  return count;
 }
+console.log(birthday([2, 2, 1, 3, 2], 4, 2));
+console.log(birthday([1, 2, 1, 3, 2], 3, 2));
