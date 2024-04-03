@@ -66,5 +66,5 @@ Two types have a frequency of 3, and the lower of those is type 3.
 
 function migratoryBirds(arr) {
     // Write your code here
-
+  
 }
