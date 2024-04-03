@@ -66,3 +66,4 @@ function divisibleSumPairs(n, k, ar) {
   return count
 }
 console.log(divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]));
+// Complejidad = O(n^2), porque tiene for anidado.
