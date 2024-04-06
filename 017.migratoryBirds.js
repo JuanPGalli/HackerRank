@@ -65,8 +65,36 @@ Two types have a frequency of 3, and the lower of those is type 3.
  */
 
 function migratoryBirds(arr) {
-    // Write your code here
-  
+  // Write your code here
+  // Complejidad: O(n)
+  let count = {}
+  arr.forEach((value) => {
+    if (!count[value]) count[value]=1
+    else count[value]++
+  })
+  let max = Math.max(...Object.values(count));
+  for (const key in count) {
+    if(count[key]===max) return key
+  }
 }
 console.log(migratoryBirds([1, 4, 4, 4, 5, 3]));
 console.log(migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]));
+
+// Solucion chatGPT:
+/*function migratoryBirds(arr) {
+    let count = {};
+    
+    // Contar las ocurrencias de cada tipo de ave
+    arr.forEach((value) => {
+        count[value] = (count[value] || 0) + 1;
+    });
+    
+    // Encontrar el tipo de ave más frecuente
+    let maxCount = Math.max(...Object.values(count));
+    let mostFrequentType = Object.keys(count).find(key => count[key] === maxCount);
+    
+    return mostFrequentType;
+}
+
+console.log(migratoryBirds([1, 4, 4, 4, 5, 3]));
+console.log(migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]));*/
