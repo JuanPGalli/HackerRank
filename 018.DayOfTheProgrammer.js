@@ -64,5 +64,14 @@ Since 1800 is leap year as per Julian calendar. Day lies on 12 September.*/
 
 function dayOfProgrammer(year) {
     // Write your code here
-  
+  if (year === 1918) return "26.09.1918";
+  else if (
+    year < 1918 && year % 4 === 0 || // Julian Calendar
+    year > 1918 && ((year % 400 === 0)||(year % 4===0 && year % 100 !== 0))
+  ) return `12.09.${year}`;
+  else return `13.09.${year}`;
 }
+console.log(dayOfProgrammer(1800));
+console.log(dayOfProgrammer(1801));
+console.log(dayOfProgrammer(2016));
+console.log(dayOfProgrammer(1918));
