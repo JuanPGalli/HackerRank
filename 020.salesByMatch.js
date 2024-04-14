@@ -57,5 +57,5 @@ There are three pairs of socks.*/
 
 function sockMerchant(n, ar) {
     // Write your code here
-
+ 
 }
