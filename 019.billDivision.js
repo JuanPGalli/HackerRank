@@ -59,7 +59,7 @@ Anna didn't eat item bill[1]=10, but she shared the rest of the items with Brian
 
 function bonAppetit(bill, k, b) {
     // Write your code here
-let anaBill=0;
+  let anaBill=0;
   for(let i=0;i<bill.length;i++){
     if(i !== k) anaBill= anaBill + bill[i]
   }
