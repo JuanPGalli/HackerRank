@@ -57,6 +57,16 @@ There are three pairs of socks.*/
 
 function sockMerchant(n, ar) {
     // Write your code here
-  
+  let pairs = {};
+  let totalPairs = 0;
+  for (let i = 0; i < n; i++){
+    const color = ar[i];
+    if (pairs[color]) {
+      totalPairs++
+      pairs[color] = 0;
+    }
+    else pairs[color] = 1;
+  }
+  return totalPairs
 }
 console.log(sockMerchant(9,[10, 20, 20, 10, 10, 30, 50, 10, 20]))
