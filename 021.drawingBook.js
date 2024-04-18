@@ -86,7 +86,20 @@ Return the minimum value, 0.*/
 
 function pageCount(n, p) {
     // Write your code here
-
+    let startCount = 0;
+    let finalCount = 0;
+    for(let i=1;i<n;i++){
+        if(i===p) break;
+        if(i%2!==0) startCount++;
+        console.log(i,startCount)
+    }
+    for(let i=n;i>0;i--){
+        if(i===p) break;
+        if(i%2===0) finalCount++;
+        console.log(i,finalCount)
+    }
+    if(startCount<finalCount) return startCount;
+    else return finalCount;
 }
-console.log(pageCount(6,2))
-console.log(pageCount(5,4))
+console.log(pageCount(6,2))// startCount = 1 finalCount= 2
+console.log(pageCount(5,4))// startCount = 2 finalCount= 0
