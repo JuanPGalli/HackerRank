@@ -88,3 +88,5 @@ function pageCount(n, p) {
     // Write your code here
 
 }
+console.log(pageCount(6,2))
+console.log(pageCount(5,4))
