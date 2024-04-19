@@ -52,7 +52,21 @@ The hiker enters and leaves one valley.*/
 
 function countingValleys(steps, path) {
     // Write your code here
-  let count = 0;
-  for (let i = 0; i < steps;i++){}
+  let valleys = 0;
+  let altitude = 0;
+  for (let i = 0; i < steps; i++) {
+      if (path[i] === 'U') {
+          altitude++;
+      } else {
+          altitude--;
+      }
+      // Check if transitioning from below sea level to sea level
+      if (altitude === 0 && path[i] === 'U') {
+          valleys++;
+      }
+  }
+  return valleys;
 }
 console.log(countingValleys(8,"UDDDUDUU"))// 1
+console.log(countingValleys(8,"DDUUUUDD"))// 1
+console.log(countingValleys(12,"DDUUDDUDUUUD"))// 2
