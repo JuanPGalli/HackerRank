@@ -52,5 +52,7 @@ The hiker enters and leaves one valley.*/
 
 function countingValleys(steps, path) {
     // Write your code here
-  
+  let count = 0;
+  for (let i = 0; i < steps;i++){}
 }
+console.log(countingValleys(8,"UDDDUDUU"))// 1
