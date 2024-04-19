@@ -52,5 +52,5 @@ The hiker enters and leaves one valley.*/
 
 function countingValleys(steps, path) {
     // Write your code here
-    
+  
 }
