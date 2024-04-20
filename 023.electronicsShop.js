@@ -56,6 +56,15 @@ There is no way to buy one keyboard and one USB drive because 4+5>5, so return -
  */
 function getMoneySpent(keyboards, drives, b) {    
     //Write your code here.
-    
-
+    let purchased = [];
+    for(let i=0;i<keyboards.length;i++){
+        for(let j=0;j<drives.length;j++){
+            if(keyboards[i]+drives[j]<=b) purchased.push(keyboards[i]+drives[j])
+        }
+    }
+    if(!isNaN) return Math.max(...purchased)
+    else return -1
 }
+console.log(getMoneySpent([40,50,60],[5,8,12],60)); // 58
+console.log(getMoneySpent([3,1],[5,2,8],9)); // 9
+console.log(getMoneySpent([4],[5],5)); // -1
