@@ -69,5 +69,5 @@ then the total cost will be 1+1+2=4.
 
 function formingMagicSquare(s) {
     // Write your code here
-
+ 
 }
