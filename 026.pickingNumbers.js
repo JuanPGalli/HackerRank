@@ -53,5 +53,5 @@ We choose the following multiset of integers from the array: {1,2,2,1,2}. Each p
 
 function pickingNumbers(a) {
     // Write your code here
-  //hola
+  
 }
