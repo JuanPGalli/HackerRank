@@ -53,5 +53,18 @@ We choose the following multiset of integers from the array: {1,2,2,1,2}. Each p
 
 function pickingNumbers(a) {
     // Write your code here
-  //
+  // Create a frequency array to count occurrences of each integer
+  const freq = new Array(100).fill(0); // Since the constraint is a[i] < 100
+  for (let num of a) {
+      freq[num]++;
+  }
+  
+  let maxLen = 0;
+  // Iterate through the frequency array to find the maximum sum of frequencies
+  for (let i = 0; i < 99; i++) {
+      maxLen = Math.max(maxLen, freq[i] + freq[i + 1]);
+  }
+  
+  return maxLen;
 }
+console.log(pickingNumbers([1,1,2,2,4,4,5,5,5]))
