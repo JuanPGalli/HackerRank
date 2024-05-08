@@ -69,5 +69,14 @@ then the total cost will be 1+1+2=4.
 
 function formingMagicSquare(s) {
     // Write your code here
- 
+   let totalCost=0;
+  for(let i=0;i<3;i++){
+      let sum = 0;
+    for(let j=0;j<3;j++){
+        sum+=s[i][j];
+    }
+    if(sum!==15)totalCost+=Math.abs(sum-15);
+  }
+  return totalCost
 }
+console.log(formingMagicSquare([[5, 3, 4], [1, 5, 8], [6, 4, 2]])); // 7;
