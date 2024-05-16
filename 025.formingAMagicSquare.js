@@ -69,14 +69,31 @@ then the total cost will be 1+1+2=4.
 
 function formingMagicSquare(s) {
     // Write your code here
-   let totalCost=0;
-  for(let i=0;i<3;i++){
-      let sum = 0;
-    for(let j=0;j<3;j++){
-        sum+=s[i][j];
+    // Define all possible 3x3 magic squares manually
+    const magicSquares = [
+        [[8, 3, 4], [1, 5, 9], [6, 7, 2]],
+        [[4, 9, 2], [3, 5, 7], [8, 1, 6]],
+        [[2, 9, 4], [7, 5, 3], [6, 1, 8]],
+        [[6, 1, 8], [7, 5, 3], [2, 9, 4]],
+        [[6, 7, 2], [1, 5, 9], [8, 3, 4]],
+        [[2, 7, 6], [9, 5, 1], [4, 3, 8]],
+        [[4, 3, 8], [9, 5, 1], [2, 7, 6]],
+        [[8, 1, 6], [3, 5, 7], [4, 9, 2]]
+    ];
+
+    let minCost = Infinity;
+
+    // Iterate over each magic square and calculate the cost
+    for (const magicSquare of magicSquares) {
+        let cost = 0;
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                cost += Math.abs(s[i][j] - magicSquare[i][j]);
+            }
+        }
+        minCost = Math.min(minCost, cost);
     }
-    if(sum!==15)totalCost+=Math.abs(sum-15);
-  }
-  return totalCost
+
+    return minCost;
 }
 console.log(formingMagicSquare([[5, 3, 4], [1, 5, 8], [6, 4, 2]])); // 7;
